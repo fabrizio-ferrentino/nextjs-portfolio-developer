@@ -1,0 +1,226 @@
+{
+  "common": {
+    "name": "Alex Rivera",
+    "welcome": "Building something incredible ~!",
+    "language": "Language",
+    "home": "Home",
+    "location": "Location",
+    "description": "Description",
+    "technologies": "Technologies",
+    "mainfeatures": "Main Features",
+    "locationZone": "Milan, Italy",
+    "emailDescription": "Send me an email anytime",
+    "gitHubDescription": "Check out my code",
+    "linkedinDescription": "Let's connect professionally",
+    "checkMyProfile": "Check My Profile",
+    "linkedin": "https://linkedin.com/in/alex-rivera-mock",
+    "github": "https://github.com/alexriveradev",
+    "gitlab": "https://gitlab.com/alexriveradev",
+    "email": "hello@alexrivera.dev",
+    "website": "https://alexrivera.dev",
+    "filterBy": "Filter by:",
+    "herotitles": [
+      "Front-end Developer",
+      "Back-end Developer",
+      "Full-Stack Developer"
+    ]
+  },
+  "header": {
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "tagline": "Turning ideas into scalable software solutions, one step at a time.",
+    "rightButton": "About Me",
+    "leftBuffon": "Get In Touch"
+  },
+  "about": {
+    "title": "About Me",
+    "bio": "I'm a Full Stack Developer with a passion for building pixel-perfect, engaging, and accessible digital experiences. With over 3 years of experience in the tech industry, I thrive in dynamic environments where I can leverage modern web technologies to solve complex problems and deliver high-quality products.",
+    "whatIBringToTheTable": "What I bring to the table:",
+    "row1": "End-to-end development of responsive web applications",
+    "row2": "Strong focus on UI/UX principles and accessibility standards",
+    "row3": "Experience in designing scalable RESTful APIs and database schemas",
+    "row4": "Agile mindset with a track record of successful team collaborations",
+    "letsConnect": "Let's Connect"
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "tagline": "A selection of technologies and tools I use to design, develop, and maintain modern applications",
+    "categories": {
+      "languages": ["JavaScript", "TypeScript", "HTML5", "CSS3", "Python", "GraphQL"],
+      "frameworks": ["React", "Next.js", "Node.js", "Express", "Django"],
+      "tools": ["Git", "Docker", "Webpack", "Figma", "AWS"],
+      "libraries": ["Tailwind CSS", "Redux Toolkit", "Framer Motion", "React Query"],
+      "testing": ["Jest", "Cypress", "Playwright"],
+      "design": ["Responsive Design", "Mobile-First", "Web Content Accessibility Guidelines (WCAG)"]
+    },
+    "moreTitle": "Always Learning",
+    "moreDescrition": "The tech landscape is always shifting, and I make it a priority to stay updated. Recently, I've been diving deeper into Serverless architectures, exploring WebGL for 3D web experiences, and refining my CI/CD pipeline skills."
+  },
+  "experience": {
+    "title": "Experience",
+    "tagline": "My professional journey in software development",
+    "keyAchievements": "Key Achievements",
+    "technologies": "Technologies",
+    "moreTitle": "Want the full story?",
+    "moreDescrition": "I've worked with startups, agencies, and enterprise teams. Check out my LinkedIn or download my resume for a comprehensive look at my career path.",
+    "jobs": [
+      {
+        "id": 1,
+        "title": "Frontend Engineer",
+        "company": "TechNova Solutions",
+        "companyUrl": "https://technova-mock-url.com/",
+        "location": "Remote",
+        "duration": "Mar 2023 - Present",
+        "type": "Full-time",
+        "description": "Leading the frontend development of a SaaS platform for team collaboration. Responsible for architecting reusable component libraries and optimizing rendering performance.",
+        "achievements": [
+          "Spearheaded the migration from Create React App to Next.js, improving SEO and reducing initial load time by 40%",
+          "Developed a custom drag-and-drop Kanban board interface using modern web APIs",
+          "Mentored junior developers and established standardized code review practices",
+          "Collaborated closely with the design team to implement a comprehensive design system"
+        ],
+        "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Storybook", "Zustand"]
+      },
+      {
+        "id": 2,
+        "title": "Full Stack Developer",
+        "company": "CloudStream Digital",
+        "companyUrl": "https://cloudstream-mock-url.com/",
+        "location": "Rome, RM",
+        "duration": "Sep 2021 - Feb 2023",
+        "type": "Full-time",
+        "description": "Developed and maintained various e-commerce and CMS platforms for international clients. Handled both backend API development and frontend integrations.",
+        "achievements": [
+          "Built a headless e-commerce frontend that increased mobile conversion rates by 25%",
+          "Designed and implemented RESTful APIs using Node.js and Express to serve over 10,000 daily active users",
+          "Integrated Stripe for seamless payment processing and subscription management",
+          "Automated database backups and deployment pipelines using GitHub Actions"
+        ],
+        "technologies": ["React", "Node.js", "Express", "MongoDB", "Stripe API"]
+      },
+      {
+        "id": 3,
+        "title": "Web Developer Intern",
+        "company": "PixelPerfect Agency",
+        "companyUrl": "https://pixelperfect-mock-url.com/",
+        "location": "Milan, MI",
+        "duration": "Jan 2021 - Jul 2021",
+        "type": "Internship",
+        "description": "Assisted in the creation of landing pages and interactive promotional websites for various marketing campaigns. Focused heavily on CSS animations and responsive design.",
+        "achievements": [
+          "Translated UI/UX wireframes into functional, cross-browser compatible HTML/CSS templates",
+          "Implemented complex GSAP animations to enhance user engagement on client landing pages",
+          "Assisted in debugging and fixing frontend issues reported by the QA team"
+        ],
+        "technologies": ["HTML5", "SCSS", "JavaScript", "GSAP", "PHP"]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "tagline": "A collection of projects that showcase my skills and passion for software development",
+    "projectsList": [
+      {
+        "id": 1,
+        "title": "Orbit E-Commerce Hub",
+        "description": "A fully functional, modern headless e-commerce platform. Orbit allows users to browse products, manage a shopping cart, and securely checkout. The admin dashboard provides real-time sales metrics and inventory management. Built to demonstrate high-performance web practices and seamless third-party service integration.",
+        "image": "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=1000",
+        "images": [
+          "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=1000",
+          "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000"
+        ],
+        "technologies": ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Stripe", "Tailwind CSS"],
+        "features": [
+          "Server-side rendering for optimal SEO and performance",
+          "Secure user authentication via NextAuth.js",
+          "Complete checkout flow integrated with Stripe webhooks",
+          "Admin dashboard with chart visualizations for sales data"
+        ],
+        "github": "https://github.com/alexriveradev/orbit-ecommerce",
+        "live": "https://orbit-store-mock.vercel.app",
+        "status": "Completed"
+      },
+      {
+        "id": 2,
+        "title": "TaskFlow Pro",
+        "description": "A productivity and project management web application tailored for remote teams. TaskFlow Pro features real-time updates, customizable workspaces, and an intuitive drag-and-drop interface for task management. It aims to reduce context switching by keeping all project assets in one unified space.",
+        "technologies": ["React", "Node.js", "Socket.io", "MongoDB", "Framer Motion"],
+        "image": "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?auto=format&fit=crop&q=80&w=1000",
+        "images": [
+          "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?auto=format&fit=crop&q=80&w=1000",
+          "https://images.unsplash.com/photo-1512314889357-e157c22f938d?auto=format&fit=crop&q=80&w=1000"
+        ],
+        "features": [
+          "Real-time bidirectional communication using WebSockets",
+          "Drag-and-drop task prioritization and status updates",
+          "Role-based access control for different team members",
+          "Fluid UI animations to enhance the user experience"
+        ],
+        "github": "https://github.com/alexriveradev/taskflow-pro",
+        "live": "https://taskflow-pro-mock.netlify.app",
+        "status": "In Production"
+      },
+      {
+        "id": 3,
+        "title": "WeatherMap 3D",
+        "description": "An interactive, 3D weather visualization tool. Users can spin a 3D globe to select locations and view real-time weather data, forecasts, and climate trends. This project was an exploration into WebGL and integrating complex third-party data streams into a 3D environment.",
+        "image": "https://images.unsplash.com/photo-1561484930-998b6a7b22e8?auto=format&fit=crop&q=80&w=1000",
+        "images": [
+          "https://images.unsplash.com/photo-1561484930-998b6a7b22e8?auto=format&fit=crop&q=80&w=1000"
+        ],
+        "technologies": ["Three.js", "React Three Fiber", "OpenWeatherMap API", "Vite"],
+        "features": [
+          "Interactive 3D globe with smooth panning and zooming",
+          "Live weather data fetching based on geographical coordinates",
+          "Dynamic particle systems to simulate rain and snow visually",
+          "Responsive overlay UI built with React"
+        ],
+        "github": "https://github.com/alexriveradev/weathermap-3d",
+        "live": "",
+        "status": "In Development"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Let's Work Together",
+    "tagline": "Have an idea or an opportunity in mind? I'm open to collaborations, projects, and new challenges.",
+    "getInTouch": "Get In Touch",
+    "followMe": "Follow Me"
+  },
+  "message": {
+    "sendAMessage": "Send a Message",
+    "name": "Name",
+    "namePlaceholder": "Jane Doe",
+    "email": "Email",
+    "emailPlaceholder": "jane@example.com",
+    "subject": "Subject",
+    "subjectPlaceholder": "Project Inquiry",
+    "message": "Message",
+    "messagePlaceholder": "Hi Alex, I have a project in mind...",
+    "sendMessage": "Send Message",
+    "sendSuccessTitle": "Message Sent!",
+    "sendSuccessDescription": "Message received! I'll get back to you soon.",
+    "sendErrorTitle": "Error",
+    "sendErrorDescription": "Failed to process message.",
+    "sending": "Sending...",
+    "privacyErrorTitle": "Privacy Policy",
+    "privacyErrorDescription": "Please accept the Privacy Policy to continue."
+  },
+  "footer": {
+    "tagline": "Building reliable and well-structured software solutions",
+    "tagline2": "Learning, improving, and writing code one step at a time.",
+    "quickLinks": "Quick Links",
+    "connect": "Connect"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "time": "Last updated March 69, 2099",
+    "footer": "This Privacy Policy was created by Alex Rivera",
+    "description": "This website may collect personal information such as your name, email address, subject, and message when you submit the contact form. This data is used solely for the purpose of responding to your inquiries. The information will not be shared, sold, or distributed to third parties. You have the right to request access, modification, or deletion of your personal data at any time by contacting the site owner."
+  }
+}
