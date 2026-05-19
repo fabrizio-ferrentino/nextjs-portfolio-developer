@@ -6,12 +6,14 @@ import { useTheme } from '../../contexts/ThemeContext';
 import { Sun, Moon, Menu, X } from 'lucide-react';
 import LanguageSwitcher from "../ui/LanguageSwitcher";
 import { useTranslation } from 'react-i18next';
+import WarningBanner from "../ui/WarningBanner"
 
 const Header = () => {
   const { t } = useTranslation();
   const { theme, toggleTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showBanner, setShowBanner] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,11 +36,17 @@ const Header = () => {
   const mobileButtonClass = "block w-full text-left px-4 py-3 rounded-xl text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 active:bg-gray-100 dark:active:bg-gray-800 font-medium transition-all duration-200 focus:outline-none [-webkit-tap-highlight-color:transparent]";
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled || isMobileMenuOpen 
-      ? 'bg-white/70 dark:bg-gray-900/70 backdrop-blur-lg border-b border-gray-200/50 dark:border-gray-700/50 shadow-sm'
-      : 'bg-transparent'
-      }`}>
+  <>
+    {showBanner && (
+      <WarningBanner onClose={() => setShowBanner(false)} />
+    )}
+    <header className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
+        showBanner ? 'top-[85px] sm:top-[65px]' : 'top-0'
+      } ${
+        isScrolled || isMobileMenuOpen 
+        ? 'bg-white/70 dark:bg-gray-900/70 backdrop-blur-lg border-b border-gray-200/50 dark:border-gray-700/50 shadow-sm'
+        : 'bg-transparent'
+        }`}>
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -139,6 +147,7 @@ const Header = () => {
         </div>
       </div>
     </header>
+    </>
   );
 };
 
