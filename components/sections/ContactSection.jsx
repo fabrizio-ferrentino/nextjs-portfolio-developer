@@ -40,15 +40,6 @@ const ContactSection = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // if (!privacyAccepted) {
-    //   toast({
-    //     title: "Privacy Policy",
-    //     description: "Please accept the Privacy Policy to continue.",
-    //     variant: "destructive",
-    //   });
-    //   return;
-    // }
-
     setIsSubmitting(true);
 
     try {
@@ -68,7 +59,6 @@ const ContactSection = () => {
           description: result.message || t('message.sendSuccessDescription'),
         });
 
-        // Reset form
         setFormData({
           name: '',
           email: '',
@@ -130,7 +120,6 @@ const ContactSection = () => {
     }
   ];
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -265,217 +254,193 @@ const ContactSection = () => {
             </motion.p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 lg:items-stretch min-h-[600px]">
-            {/* Contact Form - Mobile First Responsive */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 lg:items-start">
+            {/* Contact Form */}
             <motion.div
-              className="order-2 lg:order-1 flex"
+              className="order-2 lg:order-1"
               variants={formVariants}
             >
-              <motion.div
-                className="flex-1 h-full"
-              >
-                <Card className="bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 shadow-lg flex-1 flex flex-col transition-shadow duration-300 h-full min-h-[600px]">
-                  <CardHeader className="pb-4 sm:pb-6">
-                    <CardTitle className="text-xl sm:text-2xl text-gray-900 dark:text-white flex items-center space-x-2">
-                      <motion.div
-                        whileHover={{ rotate: 360 }}
-                        whileTap={{ rotate: 360 }}
-                        transition={{ duration: 0.5 }}
-                      >
-                        <Send className="w-5 h-5 sm:w-6 sm:h-6 text-blue-500 flex-shrink-0" />
-                      </motion.div>
-                      <span>{t('message.sendAMessage')}</span>
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="px-4 sm:px-6 flex-1 flex flex-col">
-                    <motion.form
-                      onSubmit={handleSubmit}
-                      className="space-y-4 sm:space-y-6 flex-1 flex flex-col"
-                      initial="hidden"
-                      animate="visible"
-                      transition={{ staggerChildren: 0.1, delayChildren: 0.2 }}
+              <Card className="bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 shadow-lg transition-shadow duration-300">
+                <CardHeader className="pb-4 sm:pb-6">
+                  <CardTitle className="text-xl sm:text-2xl text-gray-900 dark:text-white flex items-center space-x-2">
+                    <motion.div
+                      whileHover={{ rotate: 360 }}
+                      whileTap={{ rotate: 360 }}
+                      transition={{ duration: 0.5 }}
                     >
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <motion.div className="space-y-2" variants={inputVariants}>
-                          <Label htmlFor="name" className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                            {t('message.name')} *
-                          </Label>
-                          <motion.div
-                            whileFocus={{ scale: 1.02 }}
-                            transition={{ duration: 0.2 }}
-                          >
-                            <Input
-                              id="name"
-                              name="name"
-                              type="text"
-                              required
-                              value={formData.name}
-                              onChange={handleInputChange}
-                              className="w-full border-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-400 text-sm sm:text-base transition-all duration-300"
-                              placeholder={t('message.namePlaceholder')}
-                            />
-                          </motion.div>
-                        </motion.div>
-                        <motion.div className="space-y-2" variants={inputVariants}>
-                          <Label htmlFor="email" className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                            {t('message.email')} *
-                          </Label>
-                          <motion.div
-                            whileFocus={{ scale: 1.02 }}
-                            transition={{ duration: 0.2 }}
-                          >
-                            <Input
-                              id="email"
-                              name="email"
-                              type="email"
-                              required
-                              value={formData.email}
-                              onChange={handleInputChange}
-                              className="w-full border-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-400 text-sm sm:text-base transition-all duration-300"
-                              placeholder={t('message.emailPlaceholder')}
-                            />
-                          </motion.div>
-                        </motion.div>
-                      </div>
-
+                      <Send className="w-5 h-5 sm:w-6 sm:h-6 text-blue-500 flex-shrink-0" />
+                    </motion.div>
+                    <span>{t('message.sendAMessage')}</span>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="px-4 sm:px-6">
+                  <motion.form
+                    onSubmit={handleSubmit}
+                    className="space-y-4 sm:space-y-6"
+                    initial="hidden"
+                    animate="visible"
+                    transition={{ staggerChildren: 0.1, delayChildren: 0.2 }}
+                  >
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <motion.div className="space-y-2" variants={inputVariants}>
-                        <Label htmlFor="subject" className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                          {t('message.subject')} *
+                        <Label htmlFor="name" className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                          {t('message.name')} *
                         </Label>
-                        <motion.div
-                          whileFocus={{ scale: 1.02 }}
-                          transition={{ duration: 0.2 }}
-                        >
+                        <motion.div whileFocus={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
                           <Input
-                            id="subject"
-                            name="subject"
+                            id="name"
+                            name="name"
                             type="text"
                             required
-                            value={formData.subject}
+                            value={formData.name}
                             onChange={handleInputChange}
                             className="w-full border-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-400 text-sm sm:text-base transition-all duration-300"
-                            placeholder={t('message.subjectPlaceholder')}
+                            placeholder={t('message.namePlaceholder')}
                           />
                         </motion.div>
                       </motion.div>
-
-                      <motion.div className="space-y-2 flex-1 flex flex-col" variants={inputVariants}>
-                        <Label htmlFor="message" className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                          {t('message.message')} *
+                      <motion.div className="space-y-2" variants={inputVariants}>
+                        <Label htmlFor="email" className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                          {t('message.email')} *
                         </Label>
-                        <motion.div
-                          whileFocus={{ scale: 1.02 }}
-                          transition={{ duration: 0.2 }}
-                          className="flex-1"
-                        >
-                          <Textarea
-                            id="message"
-                            name="message"
+                        <motion.div whileFocus={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
+                          <Input
+                            id="email"
+                            name="email"
+                            type="email"
                             required
-                            rows={isMobile ? 6 : isStacked ? 9 : 16}
-                            value={formData.message}
+                            value={formData.email}
                             onChange={handleInputChange}
-                            className="w-full border-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-400 resize-none text-sm sm:text-base flex-1 transition-all duration-300 min-w-[200px]"
-                            placeholder={t('message.messagePlaceholder')}
+                            className="w-full border-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-400 text-sm sm:text-base transition-all duration-300"
+                            placeholder={t('message.emailPlaceholder')}
                           />
                         </motion.div>
                       </motion.div>
+                    </div>
 
-                      {/* Privacy Policy Checkbox */}
-                      <motion.div
-                        className="flex items-start space-x-3 p-4 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700"
-                        variants={inputVariants}
-                      >
-                        <input
-                          type="checkbox"
-                          id="privacy-consent"
-                          checked={privacyAccepted}
-                          onChange={(e) => setPrivacyAccepted(e.target.checked)}
-                          className="mt-1 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 focus:ring-offset-0 cursor-pointer"
-                          data-testid="privacy-checkbox"
+                    <motion.div className="space-y-2" variants={inputVariants}>
+                      <Label htmlFor="subject" className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                        {t('message.subject')} *
+                      </Label>
+                      <motion.div whileFocus={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
+                        <Input
+                          id="subject"
+                          name="subject"
+                          type="text"
+                          required
+                          value={formData.subject}
+                          onChange={handleInputChange}
+                          className="w-full border-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-400 text-sm sm:text-base transition-all duration-300"
+                          placeholder={t('message.subjectPlaceholder')}
                         />
-                        <label
-                          htmlFor="privacy-consent"
-                          className="text-sm text-gray-600 dark:text-gray-400 cursor-pointer select-none"
-                        >
-                          I agree to the processing of my data according to the{' '}
-                          <button
-                            type="button"
-                            onClick={() => setIsPrivacyOpen(true)}
-                            className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline font-medium transition-colors"
-                          >
-                            Privacy Policy
-                          </button>
-                          {' *'}
-                        </label>
                       </motion.div>
+                    </motion.div>
 
-                      <motion.div className="mt-auto pt-4" variants={buttonVariants}>
-                        <motion.div
-                          variants={buttonVariants}
-                          whileHover="hover"
-                          whileTap="tap"
-                        >
-                          <Button
-                            type="submit"
-                            disabled={isSubmitting || !isFormValid}
-                            className={`w-full text-white py-2.5 sm:py-3 font-medium transition-all duration-300 text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed ${isFormValid && !isSubmitting
-                              ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700'
-                              : 'bg-gray-400 hover:bg-gray-400'
-                              }`}
-                            data-testid="submit-button"
-                          >
-                            <AnimatePresence mode="wait">
-                              {isSubmitting ? (
-                                <motion.div
-                                  key="loading"
-                                  className="flex items-center justify-center space-x-2"
-                                  initial={{ opacity: 0 }}
-                                  animate={{ opacity: 1 }}
-                                  exit={{ opacity: 0 }}
-                                >
-                                  <motion.div
-                                    className="w-4 h-4 border-2 border-white border-t-transparent rounded-full"
-                                    animate={{ rotate: 360 }}
-                                    transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                                  />
-                                  <span>{t('message.sending')}</span>
-                                </motion.div>
-                              ) : (
-                                <motion.div
-                                  key="send"
-                                  className="flex items-center justify-center space-x-2"
-                                  initial={{ opacity: 0 }}
-                                  animate={{ opacity: 1 }}
-                                  exit={{ opacity: 0 }}
-                                >
-                                  <motion.div
-                                    whileHover={{ x: 5 }}
-                                    transition={{ duration: 0.2 }}
-                                  >
-                                    <Send className="w-4 h-4" />
-                                  </motion.div>
-                                  <span>{t('message.sendMessage')}</span>
-                                </motion.div>
-                              )}
-                            </AnimatePresence>
-                          </Button>
-                        </motion.div>
+                    <motion.div className="space-y-2" variants={inputVariants}>
+                      <Label htmlFor="message" className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                        {t('message.message')} *
+                      </Label>
+                      <motion.div whileFocus={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
+                        <Textarea
+                          id="message"
+                          name="message"
+                          required
+                          rows={isMobile ? 6 : 12}
+                          value={formData.message}
+                          onChange={handleInputChange}
+                          className="w-full border-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-400 resize-none text-sm sm:text-base transition-all duration-300"
+                          placeholder={t('message.messagePlaceholder')}
+                        />
                       </motion.div>
-                    </motion.form>
-                  </CardContent>
-                </Card>
-              </motion.div>
+                    </motion.div>
+
+                    {/* Privacy Policy Checkbox */}
+                    <motion.div
+                      className="flex items-start space-x-3 p-4 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700"
+                      variants={inputVariants}
+                    >
+                      <input
+                        type="checkbox"
+                        id="privacy-consent"
+                        checked={privacyAccepted}
+                        onChange={(e) => setPrivacyAccepted(e.target.checked)}
+                        className="mt-1 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 focus:ring-offset-0 cursor-pointer"
+                        data-testid="privacy-checkbox"
+                      />
+                      <label
+                        htmlFor="privacy-consent"
+                        className="text-sm text-gray-600 dark:text-gray-400 cursor-pointer select-none"
+                      >
+                        I agree to the processing of my data according to the{' '}
+                        <button
+                          type="button"
+                          onClick={() => setIsPrivacyOpen(true)}
+                          className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline font-medium transition-colors"
+                        >
+                          Privacy Policy
+                        </button>
+                        {' *'}
+                      </label>
+                    </motion.div>
+
+                    <motion.div variants={buttonVariants}>
+                      <motion.div variants={buttonVariants} whileHover="hover" whileTap="tap">
+                        <Button
+                          type="submit"
+                          disabled={isSubmitting || !isFormValid}
+                          className={`w-full text-white py-2.5 sm:py-3 font-medium transition-all duration-300 text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed ${isFormValid && !isSubmitting
+                            ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700'
+                            : 'bg-gray-400 hover:bg-gray-400'
+                            }`}
+                          data-testid="submit-button"
+                        >
+                          <AnimatePresence mode="wait">
+                            {isSubmitting ? (
+                              <motion.div
+                                key="loading"
+                                className="flex items-center justify-center space-x-2"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                              >
+                                <motion.div
+                                  className="w-4 h-4 border-2 border-white border-t-transparent rounded-full"
+                                  animate={{ rotate: 360 }}
+                                  transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                                />
+                                <span>{t('message.sending')}</span>
+                              </motion.div>
+                            ) : (
+                              <motion.div
+                                key="send"
+                                className="flex items-center justify-center space-x-2"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                              >
+                                <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                                  <Send className="w-4 h-4" />
+                                </motion.div>
+                                <span>{t('message.sendMessage')}</span>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </Button>
+                      </motion.div>
+                    </motion.div>
+                  </motion.form>
+                </CardContent>
+              </Card>
             </motion.div>
 
-            {/* Contact Information - Mobile First Responsive */}
+            {/* Contact Information */}
             <motion.div
-              className="order-1 lg:order-2 flex"
+              className="order-1 lg:order-2"
               variants={contactInfoVariants}
             >
-              <div className="w-full space-y-6 sm:space-y-8 flex flex-col h-full min-h-[600px] justify-between">
+              <div className="w-full flex flex-col gap-8">
                 {/* Contact Methods */}
-                <div className="space-y-4 flex-1 flex flex-col">
+                <div className="space-y-4">
                   <motion.h3
                     className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-4 sm:mb-6"
                     variants={titleVariants}
@@ -483,7 +448,7 @@ const ContactSection = () => {
                     {t('contact.getInTouch')}
                   </motion.h3>
                   <motion.div
-                    className="space-y-3 sm:space-y-4 flex-1 flex flex-col justify-start"
+                    className="space-y-3 sm:space-y-4"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
@@ -503,8 +468,8 @@ const ContactSection = () => {
                           target={method.href?.startsWith('http') ? '_blank' : undefined}
                           rel={method.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                         >
-                          <Card className={`transition-all duration-300 bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 h-full ${method.href ? 'hover:shadow-xl group' : 'hover:shadow-lg'}`}>
-                            <CardContent className="p-4 sm:p-6 h-full flex items-center">
+                          <Card className={`transition-all duration-300 bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 ${method.href ? 'hover:shadow-xl group' : 'hover:shadow-lg'}`}>
+                            <CardContent className="p-4 sm:p-6 flex items-center">
                               <div className="flex items-start space-x-3 sm:space-x-4 w-full">
                                 <motion.div
                                   className={`p-2 sm:p-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex-shrink-0 ${method.href ? 'group-hover:scale-110' : ''} transition-transform duration-300`}
@@ -536,7 +501,7 @@ const ContactSection = () => {
                 </div>
 
                 {/* Social Links */}
-                <div className="space-y-4 flex-1 flex flex-col">
+                <div className="space-y-4">
                   <motion.h3
                     className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-4 sm:mb-6"
                     variants={titleVariants}
@@ -544,7 +509,7 @@ const ContactSection = () => {
                     {t('contact.followMe')}
                   </motion.h3>
                   <motion.div
-                    className="space-y-3 sm:space-y-4 flex-1 flex flex-col justify-start"
+                    className="space-y-3 sm:space-y-4"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
@@ -558,17 +523,13 @@ const ContactSection = () => {
                           href={social.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="block flex-1"
+                          className="block"
                           variants={cardVariants}
-                          whileHover={{
-                            y: -5,
-                            scale: 1.02,
-                            transition: { duration: 0.3 }
-                          }}
+                          whileHover={{ y: -5, scale: 1.02, transition: { duration: 0.3 } }}
                           whileTap={{ scale: 0.98 }}
                         >
-                          <Card className="hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 h-full group cursor-pointer">
-                            <CardContent className="p-4 sm:p-6 h-full flex items-center">
+                          <Card className="hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 group cursor-pointer">
+                            <CardContent className="p-4 sm:p-6 flex items-center">
                               <div className="flex items-center space-x-3 sm:space-x-4 w-full">
                                 <motion.div
                                   className="p-2 sm:p-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-300"
