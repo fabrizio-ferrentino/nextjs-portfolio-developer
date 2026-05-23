@@ -222,5 +222,9 @@
     "time": "Last updated March 69, 2099",
     "footer": "This Privacy Policy was created by Alex Rivera",
     "description": "This website may collect personal information such as your name, email address, subject, and message when you submit the contact form. This data is used solely for the purpose of responding to your inquiries. The information will not be shared, sold, or distributed to third parties. You have the right to request access, modification, or deletion of your personal data at any time by contacting the site owner."
+  },
+  "notice": {
+    "title": "Example Notice",
+    "description": "This is an example notice. You can customize the title, description, and button text as needed."
   }
 }

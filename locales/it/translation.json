@@ -222,5 +222,9 @@
     "time": "Ultimo aggiornamento: 69 marzo 2099",
     "footer": "Questa Informativa sulla privacy è stata creata da Alex Rivera",
     "description": "Questo sito può raccogliere dati personali come nome, indirizzo email, oggetto e messaggio quando invii il modulo di contatto. Questi dati vengono utilizzati esclusivamente per rispondere alle tue richieste e non saranno condivisi o venduti a terzi. Hai il diritto di richiedere l'accesso, la modifica o la cancellazione dei tuoi dati contattando il proprietario del sito."
+  },
+  "notice": {
+    "title": "Avviso di Esempio",
+    "description": "Questo è un avviso di esempio. Puoi personalizzare il titolo, la descrizione e il testo del pulsante secondo le tue esigenze."
   }
 }
